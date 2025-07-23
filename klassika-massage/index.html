@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Классика Массажа — массаж с врачебным подходом, Новосибирск</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            greenDark: '#133B2A',
+            greenAccent: '#1F5C42',
+            greenLight: '#F2F5F3',
+            textDark: '#1A1A1A',
+            textLight: '#FFFFFF'
+          },
+          borderRadius: {
+            'xl2': '16px'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .nf{font-family:"Neutral Face","Bebas Neue",sans-serif;}
+    .overlay-gradient{
+      background: linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.15) 100%);
+    }
+    .modal-open{overflow:hidden;}
+
+    /* ===== Scroll reveal ===== */
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.show{opacity:1;transform:none;}
+
+    /* ===== Hover lifts ===== */
+    .btn-main{transition:transform .25s ease, box-shadow .25s ease, background .2s;}
+    .btn-main:hover{transform:translateY(-2px) scale(1.02); box-shadow:0 8px 20px rgba(0,0,0,.16);}
+    .card{transition:transform .25s ease, box-shadow .25s ease;}
+    .card:hover{transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,0,0,.12);}
+
+    .rev-tab{transition:background .2s ease,color .2s ease;}
+
+    /* Scrollbar for sliders */
+    .review-slider::-webkit-scrollbar{height:6px;}
+    .review-slider::-webkit-scrollbar-thumb{background:#cfcfcf;border-radius:3px;}
+    .review-slider:hover::-webkit-scrollbar-thumb{background:#9e9e9e;}
+
+    /* Modal content animation */
+    .modal-box{transition:opacity .25s ease, transform .25s ease;}
+    .modal.hidden .modal-box{opacity:0;transform:scale(.95);}
+    .modal:not(.hidden) .modal-box{opacity:1;transform:scale(1);}
+  </style>
+</head>
+<body class="font-[Montserrat] text-textDark bg-white">
+
+<!-- ================= HERO ================= -->
+<header id="hero" class="relative min-h-screen flex items-center justify-center reveal">
+  <img src="img/forest-hero.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 overlay-gradient"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-textLight text-center">
+    <h1 class="text-4xl md:text-6xl font-semibold mb-6">Массаж с врачебным подходом!</h1>
+    <p class="max-w-2xl mx-auto text-lg md:text-xl mb-10">Центр «Классика Массажа» — команда специалистов, которые действительно работают с телом, болью и восстановлением.</p>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 transition px-8 py-4 rounded-xl2 font-semibold text-base md:text-lg text-white">Записаться онлайн</a>
+    <p class="mt-3 text-sm opacity-80">Онлайн-запись через Yclients</p>
+
+    <div class="flex gap-4 mt-10 justify-center">
+      <a href="https://wa.me/79833093010" aria-label="WhatsApp" class="w-12 h-12 bg-greenAccent/80 hover:bg-greenAccent flex items-center justify-center rounded-full transition">
+        <img src="img/wa.svg" alt="WA" class="w-6 h-6">
+      </a>
+      <a href="https://t.me/classicamassage" aria-label="Telegram" class="w-12 h-12 bg-greenAccent/80 hover:bg-greenAccent flex items-center justify-center rounded-full transition">
+        <img src="img/tg.svg" alt="TG" class="w-6 h-6">
+      </a>
+      <a href="https://www.instagram.com/classica.massage.nsk" aria-label="Instagram" class="w-12 h-12 bg-greenAccent/80 hover:bg-greenAccent flex items-center justify-center rounded-full transition">
+        <img src="img/ig.svg" alt="IG" class="w-6 h-6">
+      </a>
+    </div>
+  </div>
+
+  <!-- Logo top-left -->
+  <div class="absolute top-6 left-6 z-20 text-white">
+    <span class="nf text-2xl leading-none">КЛАССИКА</span><br>
+    <span class="font-semibold tracking-wide">МАССАЖА</span>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6 reveal">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-8">Мы просто хорошо делаем свою работу!</h2>
+    <p class="text-lg leading-8">
+      Наш центр — это не салон для «расслабления на час». Мы подходим к телу глубоко: через диагностику, знания анатомии, лечебный и восстанавливающий массаж.
+      У нас работают массажисты с медицинским образованием и врачи-реабилитологи. Каждый клиент — это отдельная история, которую мы внимательно изучаем, чтобы вернуть подвижность, убрать боль и дать телу новое дыхание.
+    </p>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="py-20 bg-greenLight">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-12 reveal">Услуги</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card -->
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">💪</div>
+        <h3 class="text-xl font-semibold mb-3">Глубокомышечный массаж</h3>
+        <p class="text-sm leading-6 mb-4">Разблокировка мышечных зажимов, работа с глубокими слоями мышц, снятие хронических болей.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">🧠</div>
+        <h3 class="text-xl font-semibold mb-3">Мануальная терапия от врача</h3>
+        <p class="text-sm leading-6 mb-4">Коррекция позвоночника и суставов. Помощь при грыжах, нарушениях осанки, защемлениях.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">🌀</div>
+        <h3 class="text-xl font-semibold mb-3">Рефлексотерапия</h3>
+        <p class="text-sm leading-6 mb-4">Воздействие на биологически активные точки — снятие стресса и восстановление внутренних систем.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">🧬</div>
+        <h3 class="text-xl font-semibold mb-3">Комплексное ведение (врач)</h3>
+        <p class="text-sm leading-6 mb-4">Питание, фармподдержка, витаминотерапия и тренировки — индивидуально и под контролем.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">😊</div>
+        <h3 class="text-xl font-semibold mb-3">Расслабляющий массаж</h3>
+        <p class="text-sm leading-6 mb-4">Снятие накопленного напряжения и усталости, улучшение общего самочувствия.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-sm card reveal">
+        <div class="text-3xl mb-4">🔥</div>
+        <h3 class="text-xl font-semibold mb-3">Антицеллюлитный массаж</h3>
+        <p class="text-sm leading-6 mb-4">Комплексная ручная работа над проблемными зонами и улучшение микроциркуляции.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPECIALISTS ================= -->
+<section id="team" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-12 reveal">Ваши тела — в надёжных руках!</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Евгений -->
+      <div class="text-center reveal">
+        <img src="img/master1.jpg" alt="Юдинцев Евгений" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+        <h3 class="text-xl font-semibold mb-2">Юдинцев Евгений</h3>
+        <p class="text-sm opacity-80 mb-4">Авторский глубокий массаж, устранение спазмов и восстановление после травм.</p>
+        <button data-modal="modal-evgeniy" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+      </div>
+
+      <!-- Морозов Артём -->
+      <div class="text-center reveal">
+        <img src="img/master2.jpg" alt="Морозов Артём" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+        <h3 class="text-xl font-semibold mb-2">Морозов Артём</h3>
+        <p class="text-sm opacity-80 mb-4">Глубокий, точный подход. Спортсмен, вице-чемпион СФО по бодибилдингу.</p>
+        <button data-modal="modal-artem" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+      </div>
+
+      <!-- Антоненко Анастасия -->
+      <div class="text-center reveal">
+        <img src="img/master3.jpg" alt="Антоненко Анастасия" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+        <h3 class="text-xl font-semibold mb-2">Антоненко Анастасия</h3>
+        <p class="text-sm opacity-80 mb-4">Медицинское образование, заботливый и точный подход к вашему телу.</p>
+        <button data-modal="modal-anastasia" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+      </div>
+
+      <!-- Чирков Александр -->
+      <div class="text-center reveal">
+        <img src="img/master4.jpg" alt="Чирков Александр" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+        <h3 class="text-xl font-semibold mb-2">Чирков Александр</h3>
+        <p class="text-sm opacity-80 mb-4">Глубокая проработка мышц без лишней боли, индивидуальный подход.</p>
+        <button data-modal="modal-alexander" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+      </div>
+
+      <!-- Иванов Леонтий -->
+      <div class="text-center reveal">
+        <img src="img/master5.jpg" alt="Иванов Леонтий" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+        <h3 class="text-xl font-semibold mb-2">Иванов Леонтий</h3>
+        <p class="text-sm opacity-80 mb-4">Классический, глубокий и расслабляющий массаж. Чуткость и сила вместе.</p>
+        <button data-modal="modal-leontiy" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+      </div>
+	  
+	  <!-- Сологуб Борис -->
+	  <div class="text-center reveal">
+		<img src="img/master6.jpg" alt="Сологуб Борис" class="w-full rounded-xl2 shadow-md mb-6 object-cover aspect-[3/4] card">
+		<h3 class="text-xl font-semibold mb-2">Сологуб Борис</h3>
+		<p class="text-sm opacity-80 mb-4">Врач травматолог-ортопед и реабилитолог. Опыт 8 лет.</p>
+		<button data-modal="modal-boris" class="open-modal text-greenAccent hover:underline text-sm font-semibold">Подробнее</button>
+	  </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="py-20 bg-greenLight">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-10">Наш лучший результат — это ваши ощущения!</h2>
+
+    <!-- Табы по мастерам -->
+    <div class="flex flex-wrap gap-3 mb-10">
+      <button class="rev-tab active bg-greenAccent text-white px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="evgeniy">Евгений</button>
+      <button class="rev-tab bg-white text-textDark px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="artem">Артём</button>
+      <button class="rev-tab bg-white text-textDark px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="anastasia">Анастасия</button>
+      <button class="rev-tab bg-white text-textDark px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="alexander">Александр</button>
+      <button class="rev-tab bg-white text-textDark px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="leontiy">Леонтий</button>
+      <button class="rev-tab bg-white text-textDark px-4 py-2 rounded-xl2 text-sm font-semibold" data-target="boris">Борис</button>
+    </div>
+
+    <!-- Контейнеры -->
+    <div class="rev-wrap">
+
+      <!-- Евгений -->
+      <div id="rev-evgeniy" class="rev-block">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/evgeniy-1.png">
+            <img src="img/reviews/evgeniy-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt="">
+          </button>
+          <button class="rev-img" data-full="img/reviews/evgeniy-2.png">
+            <img src="img/reviews/evgeniy-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt="">
+          </button>
+          <button class="rev-img" data-full="img/reviews/evgeniy-3.png">
+            <img src="img/reviews/evgeniy-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt="">
+          </button>
+          <button class="rev-img" data-full="img/reviews/evgeniy-4.png">
+            <img src="img/reviews/evgeniy-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt="">
+          </button>
+          <button class="rev-img" data-full="img/reviews/evgeniy-5.png">
+            <img src="img/reviews/evgeniy-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- Артём -->
+      <div id="rev-artem" class="rev-block hidden">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/artem-1.png"><img src="img/reviews/artem-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/artem-2.png"><img src="img/reviews/artem-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/artem-3.png"><img src="img/reviews/artem-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/artem-4.png"><img src="img/reviews/artem-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/artem-5.png"><img src="img/reviews/artem-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+        </div>
+      </div>
+
+      <!-- Анастасия -->
+      <div id="rev-anastasia" class="rev-block hidden">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/anastasia-1.png"><img src="img/reviews/anastasia-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/anastasia-2.png"><img src="img/reviews/anastasia-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/anastasia-3.png"><img src="img/reviews/anastasia-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/anastasia-4.png"><img src="img/reviews/anastasia-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/anastasia-5.png"><img src="img/reviews/anastasia-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+        </div>
+      </div>
+
+      <!-- Александр -->
+      <div id="rev-alexander" class="rev-block hidden">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/alexander-1.png"><img src="img/reviews/alexander-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/alexander-2.png"><img src="img/reviews/alexander-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/alexander-3.png"><img src="img/reviews/alexander-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/alexander-4.png"><img src="img/reviews/alexander-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/alexander-5.png"><img src="img/reviews/alexander-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+        </div>
+      </div>
+
+      <!-- Леонтий -->
+      <div id="rev-leontiy" class="rev-block hidden">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/leontiy-1.png"><img src="img/reviews/leontiy-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/leontiy-2.png"><img src="img/reviews/leontiy-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/leontiy-3.png"><img src="img/reviews/leontiy-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/leontiy-4.png"><img src="img/reviews/leontiy-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/leontiy-5.png"><img src="img/reviews/leontiy-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+        </div>
+      </div>
+
+      <!-- Борис -->
+      <div id="rev-boris" class="rev-block hidden">
+        <div class="review-slider flex gap-6 overflow-x-auto snap-x pb-2">
+          <button class="rev-img" data-full="img/reviews/boris-1.png"><img src="img/reviews/boris-1.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/boris-2.png"><img src="img/reviews/boris-2.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/boris-3.png"><img src="img/reviews/boris-3.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/boris-4.png"><img src="img/reviews/boris-4.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+          <button class="rev-img" data-full="img/reviews/boris-5.png"><img src="img/reviews/boris-5.png" class="w-72 max-h-[28rem] object-contain rounded-xl2 snap-center" alt=""></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Лайтбокс -->
+  <div id="rev-lightbox" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <img id="rev-full-img" src="" class="max-h-full max-w-full rounded-xl2 shadow-lg" alt="">
+    <button id="rev-close" class="absolute top-6 right-6 text-white text-3xl leading-none">&times;</button>
+  </div>
+</section>
+
+
+
+<!-- ================= PRICES ================= -->
+<section id="prices" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-12">Цены</h2>
+
+    <div class="grid md:grid-cols-2 gap-16">
+
+      <!-- 1. Массажи -->
+      <article class="price-block reveal card p-0 shadow-none hover:shadow-none hover:transform-none">
+        <img src="img/pricepic1.jpg" alt="Массажи" class="w-full rounded-xl2 object-cover mb-6 max-h-96">
+        <h3 class="text-2xl font-semibold mb-6">Массажи</h3>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-greenLight">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Услуга</th>
+                <th class="px-4 py-3 font-semibold">Длительность</th>
+                <th class="px-4 py-3 font-semibold">Цена</th>
+              </tr>
+            </thead>
+            <tbody class="[&>tr:nth-child(even)]:bg-greenLight/50">
+              <tr><td class="px-4 py-3">Общий массаж «классика»</td><td class="px-4 py-3">60 / 90 мин</td><td class="px-4 py-3">3 200 / 4 100₽</td></tr>
+              <tr><td class="px-4 py-3">Глубокомышечный, триггерный массаж</td><td class="px-4 py-3">60 / 90 мин</td><td class="px-4 py-3">3 500 / 5 000₽</td></tr>
+              <tr><td class="px-4 py-3">Расслабляющий массаж</td><td class="px-4 py-3">60 / 90 мин</td><td class="px-4 py-3">3 500 / 5 000₽</td></tr>
+              <tr><td class="px-4 py-3">Массаж головы, лица, ШВЗ</td><td class="px-4 py-3">30 / 60 мин</td><td class="px-4 py-3">2 000 / 3 500₽</td></tr>
+              <tr><td class="px-4 py-3">Антицеллюлитный массаж</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">3 000₽</td></tr>
+              <tr><td class="px-4 py-3">Массаж спины</td><td class="px-4 py-3">45 мин</td><td class="px-4 py-3">2 500₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- 2. Мануальная терапия / врач -->
+      <article class="price-block reveal card p-0 shadow-none hover:shadow-none hover:transform-none">
+        <img src="img/pricepic2.jpg" alt="Мануальная терапия" class="w-full rounded-xl2 object-cover mb-6 max-h-96">
+        <h3 class="text-2xl font-semibold mb-6">Мануальная терапия / врач-реабилитолог</h3>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-greenLight">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Услуга</th>
+                <th class="px-4 py-3 font-semibold">Длительность</th>
+                <th class="px-4 py-3 font-semibold">Цена</th>
+              </tr>
+            </thead>
+            <tbody class="[&>tr:nth-child(even)]:bg-greenLight/50">
+              <tr><td class="px-4 py-3">Первичный приём (диагностика, консультация)</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">5 000₽</td></tr>
+              <tr><td class="px-4 py-3">Повторный приём</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">3 500₽</td></tr>
+              <tr><td class="px-4 py-3">Приём с мануальной терапией и методами лечения (рефлексотерапия и др.)</td><td class="px-4 py-3">90 мин</td><td class="px-4 py-3">7 500₽</td></tr>
+              <tr><td class="px-4 py-3">Мануальная терапия с прикладными методами лечения</td><td class="px-4 py-3">90 мин</td><td class="px-4 py-3">7 500₽</td></tr>
+              <tr><td class="px-4 py-3">Рефлексотерапия</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">4 000₽</td></tr>
+              <tr><td class="px-4 py-3">Мануальная терапия</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">4 000₽</td></tr>
+              <tr><td class="px-4 py-3">План питания, нагрузок, витаминотерапии</td><td class="px-4 py-3">—</td><td class="px-4 py-3">6 000₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- 3. Парный массаж -->
+      <article class="price-block reveal card p-0 shadow-none hover:shadow-none hover:transform-none">
+        <img src="img/pricepic3.jpg" alt="Парный массаж" class="w-full rounded-xl2 object-cover mb-6 max-h-96">
+        <h3 class="text-2xl font-semibold mb-6">Парный массаж</h3>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm md:text-base">
+            <thead class="bg-greenLight">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Услуга</th>
+                <th class="px-4 py-3 font-semibold">Длительность</th>
+                <th class="px-4 py-3 font-semibold">Цена</th>
+              </tr>
+            </thead>
+            <tbody class="[&>tr:nth-child(even)]:bg-greenLight/50">
+              <tr><td class="px-4 py-3">Парный классический массаж</td><td class="px-4 py-3">90 мин</td><td class="px-4 py-3">8 200₽</td></tr>
+              <tr><td class="px-4 py-3">Парный триггерный массаж</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">7 000₽</td></tr>
+              <tr><td class="px-4 py-3">Парный расслабляющий массаж</td><td class="px-4 py-3">60 / 90 мин</td><td class="px-4 py-3">7 000 / 10 000₽</td></tr>
+              <tr><td class="px-4 py-3">Парный массаж ШВЗ, лица, головы</td><td class="px-4 py-3">60 мин</td><td class="px-4 py-3">3 500₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- 4. Полное ведение врача -->
+      <article class="price-block reveal card p-0 shadow-none hover:shadow-none hover:transform-none">
+        <img src="img/pricepic4.jpg" alt="Полное ведение врача" class="w-full rounded-xl2 object-cover mb-6 max-h-96">
+        <h3 class="text-2xl font-semibold mb-6">Полное ведение врача мануального терапевта / реабилитолога</h3>
+
+        <ul class="list-disc pl-5 space-y-2 text-sm md:text-base mb-6">
+          <li>Подбор питания и тренировочного комплекса</li>
+          <li>Аптечное и фармакологическое ведение</li>
+          <li>Консультация по состоянию крови и эндокринной системы</li>
+          <li>Консультация по восстановлению и профилактике травм и мышечной перегрузки</li>
+          <li>Включает 3 посещения терапии (мануальная / рефлексотерапия / баночная)</li>
+        </ul>
+
+        <div class="text-lg font-semibold">Стоимость: 12 000₽</div>
+      </article>
+
+    </div>
+
+    <div class="mt-16 text-center reveal">
+      <a href="https://n1367056.yclients.com"
+         class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 transition px-8 py-4 rounded-xl2 font-semibold text-base md:text-lg text-white">
+        Записаться онлайн
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= CONTACTS ================= -->
+<section id="contacts" class="py-20 bg-greenLight">
+  <div class="max-w-6xl mx-auto px-6 reveal">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-12">Контакты и запись</h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="reveal">
+        <ul class="space-y-4 text-lg">
+          <li>📍 г. Новосибирск, ул. Семьи Шамшиных, 30</li>
+          <li>📞 <a class="hover:underline" href="tel:+79833093010">+7 983 309 30 10</a></li>
+          <li>📱 <a class="hover:underline" href="https://wa.me/79833093010">WhatsApp</a></li>
+          <li>📲 <a class="hover:underline" href="https://t.me/classicamassage">Telegram</a></li>
+          <li>🕰 Пн–Вс 10:00–21:00</li>
+        </ul>
+
+        <div class="mt-8 flex gap-4">
+          <a href="https://n1367056.yclients.com" class="btn-main bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Онлайн-запись</a>
+          <a href="https://yandex.ru/maps/-/CHTqQKlG" class="bg-white hover:bg-white/80 text-textDark px-6 py-3 rounded-xl2 font-semibold text-sm border border-greenAccent/30 transition">Карта проезда</a>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl2 shadow-md reveal card">
+        <h3 class="text-xl font-semibold mb-4">Связаться быстро</h3>
+
+        <div class="grid grid-cols-2 gap-6">
+          <a href="https://t.me/classicamassage" class="group text-center">
+            <img src="img/qr-tg.png" alt="QR Telegram" class="w-full aspect-square object-contain rounded-xl2 border border-greenAccent/20 p-2 transition group-hover:border-greenAccent">
+            <span class="mt-3 block text-sm font-semibold text-greenAccent group-hover:underline">Telegram</span>
+          </a>
+
+          <a href="https://wa.me/79833093010" class="group text-center">
+            <img src="img/qr-wa.png" alt="QR WhatsApp" class="w-full aspect-square object-contain rounded-xl2 border border-greenAccent/20 p-2 transition group-hover:border-greenAccent">
+            <span class="mt-3 block text-sm font-semibold text-greenAccent group-hover:underline">WhatsApp</span>
+          </a>
+        </div>
+
+        <p class="text-xs mt-6 opacity-70">Отсканируйте QR или просто нажмите — откроется чат.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-greenDark text-textLight py-10 text-sm reveal">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div>
+      <span class="nf text-xl leading-none">КЛАССИКА</span><br>
+      <span class="font-semibold tracking-wide">МАССАЖА</span>
+    </div>
+    <div class="opacity-80">
+      © 2025 «Классика Массажа». Все права защищены.
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODALS ================= -->
+<!-- Евгений -->
+<div id="modal-evgeniy" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Юдинцев Евгений</h3>
+    <p class="mb-4">Профессиональный авторский массаж:</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>глубокомышечный массаж</li>
+      <li>устранение спазмов, триггеров</li>
+      <li>восстановление после травм</li>
+      <li>устранение массажными техниками проблем: головные боли, хроническая усталость, отечность, вздутие живота, второй подбородок, синдром беспокойных ног, работа с плоскостопием и осанкой</li>
+    </ul>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Евгению</a>
+  </div>
+</div>
+
+<!-- Артём -->
+<div id="modal-artem" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Морозов Артём</h3>
+    <p class="mb-4">Не просто массажист, а эксперт в работе с телом. Спортсмен, вице-чемпион СФО по бодибилдингу. Опыт — 3 года.</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>глубокомышечный триггерный массаж</li>
+      <li>классический массаж</li>
+      <li>антицеллюлитный массаж</li>
+    </ul>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Артёму</a>
+  </div>
+</div>
+
+<!-- Анастасия -->
+<div id="modal-anastasia" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Антоненко Анастасия</h3>
+    <p class="mb-4">Специалист с медицинским подходом. Опыт более 2 лет. Образование — высшее медицинское (лечебное дело).</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>общий классический массаж</li>
+      <li>антицеллюлитный ручной массаж</li>
+      <li>глубокомышечный массаж</li>
+    </ul>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Анастасии</a>
+  </div>
+</div>
+
+<!-- Александр -->
+<div id="modal-alexander" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Чирков Александр</h3>
+    <p class="mb-4">Опыт более 3 лет. Возвращает телу лёгкость и баланс. Акцент на триггерных точках и восстановлении мышечного тонуса.</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>классический оздоровительный массаж</li>
+      <li>глубокомышечный триггерный массаж</li>
+    </ul>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Александру</a>
+  </div>
+</div>
+
+<!-- Леонтий -->
+<div id="modal-leontiy" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Иванов Леонтий</h3>
+    <p class="mb-4">Мастер-универсал. Опыт 1 год, множество благодарностей за чуткость и мягкую силу.</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>классический оздоровительный массаж</li>
+      <li>глубокомышечный триггерный массаж</li>
+      <li>расслабляющий массаж</li>
+    </ul>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Леонтию</a>
+  </div>
+</div>
+
+<!-- Борис -->
+<div id="modal-boris" class="modal fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="modal-box relative z-50 max-w-xl mx-auto mt-24 bg-white rounded-xl2 p-8 overflow-y-auto max-h-[80vh]">
+    <button class="close-modal absolute top-4 right-4 text-2xl leading-none">&times;</button>
+    <h3 class="text-2xl font-semibold mb-4">Сологуб Борис</h3>
+    <p class="mb-4">🟡 Врач травматолог-ортопед<br>🟡 Врач реабилитолог<br>Высшее мед. образование — НГМУ. Опыт работы — 8 лет.</p>
+    <p class="mb-3 font-semibold">Основные направления:</p>
+    <ul class="list-disc pl-5 space-y-2 text-sm mb-6">
+      <li>мануальная терапия</li>
+      <li>кинезиотерапия</li>
+      <li>андрология</li>
+      <li>составление диеты и витаминотерапия</li>
+      <li>рефлексотерапия</li>
+      <li>составление тренировочного плана</li>
+      <li>консультация и диагностика заболеваний и травм ОДА</li>
+    </ul>
+    <p class="mb-6 text-sm italic opacity-80">Доверьте своё тело профессионалу!</p>
+    <a href="https://n1367056.yclients.com" class="btn-main inline-block bg-greenAccent hover:bg-greenAccent/90 text-white px-6 py-3 rounded-xl2 font-semibold text-sm">Записаться к Борису</a>
+  </div>
+</div>
+
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // Modals
+  document.querySelectorAll('.open-modal').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.modal;
+      const modal = document.getElementById(id);
+      if(modal){ modal.classList.remove('hidden'); document.documentElement.classList.add('modal-open'); }
+    });
+  });
+  document.querySelectorAll('.modal .close-modal, .modal .bg-black\\/60').forEach(el=>{
+    el.addEventListener('click',()=>{
+      el.closest('.modal').classList.add('hidden');
+      document.documentElement.classList.remove('modal-open');
+    });
+  });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ====== Табы отзывов ====== */
+  const revTabs   = document.querySelectorAll('.rev-tab');
+  const revBlocks = document.querySelectorAll('.rev-block');
+
+  revTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      revTabs.forEach(b => {
+        b.classList.remove('bg-greenAccent','text-white');
+        b.classList.add('bg-white','text-textDark');
+      });
+      btn.classList.remove('bg-white','text-textDark');
+      btn.classList.add('bg-greenAccent','text-white');
+
+      const target = btn.dataset.target;
+      revBlocks.forEach(bl => bl.classList.toggle('hidden', bl.id !== `rev-${target}`));
+    });
+  });
+
+  /* ====== Лайтбокс для отзывов ====== */
+  const lb     = document.getElementById('rev-lightbox');
+  const lbImg  = document.getElementById('rev-full-img');
+  const close  = () => { lb.classList.add('hidden'); lbImg.src=''; document.documentElement.classList.remove('modal-open'); };
+  document.getElementById('rev-close').addEventListener('click', close);
+  lb.addEventListener('click', e => { if(e.target === lb) close(); });
+
+  document.querySelector('.rev-wrap').addEventListener('click', e => {
+    const btn = e.target.closest('.rev-img');
+    if(!btn) return;
+    lbImg.src = btn.dataset.full;
+    lb.classList.remove('hidden');
+    document.documentElement.classList.add('modal-open');
+  });
+
+  /* ===== Scroll reveal ===== */
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  /* ===== Click pulse for main buttons ===== */
+  document.querySelectorAll('.btn-main').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.add('scale-95');
+      setTimeout(()=>btn.classList.remove('scale-95'),150);
+    });
+  });
+
+});
+</script>
+
+</body>
+</html>
